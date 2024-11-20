@@ -18,8 +18,8 @@ jenkins:
 
   # Authorization Strategy
   authorizationStrategy:
-    loggedInUsersCanDoAnything:
-      allowAnonymousRead: false
+  loggedInUsersCanDoAnything:
+    allowAnonymousRead: false
 
   # Tool Configurations
   tools:
