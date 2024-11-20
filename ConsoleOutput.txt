@@ -1,0 +1,125 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace C:\ProgramData\Jenkins\.jenkins\workspace\demo
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\demo\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/Hakeem404/QA-Assignment # timeout=10
+Fetching upstream changes from https://github.com/Hakeem404/QA-Assignment
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.39.1.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/Hakeem404/QA-Assignment +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 57b10a977c6206e0bad493a44dd423f6cc518609 (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 57b10a977c6206e0bad493a44dd423f6cc518609 # timeout=10
+Commit message: "Update demo.yaml"
+ > git.exe rev-list --no-walk eed6833f6b3e547fc0001b43ce20725086957d38 # timeout=10
+[demo] $ cmd /c call C:\WINDOWS\TEMP\jenkins9853379794309604190.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\demo>"C:\Users\shahd\AppData\Roaming\npm\newman.cmd" run "C:\Users\shahd\OneDrive\Desktop\SwaggerPetstore.postman_collection.json" 
+newman
+
+Swagger Petstore
+
+□ pet / {petId} / uploadImage
+└ uploads an image
+  ┌
+  │ 'Form param `file`, file load error: missing file sour
+  │ ce'
+  └
+  POST https://petstore.swagger.io/v2/pet/<long>/uploadImage [404 Not Found, 436B, 1818ms]
+
+□ pet / {petId}
+└ Find pet by ID
+  GET https://petstore.swagger.io/v2/pet/<long> [404 Not Found, 436B, 448ms]
+
+└ Updates a pet in the store with form data
+  POST https://petstore.swagger.io/v2/pet/<long> [404 Not Found, 436B, 354ms]
+
+└ Deletes a pet
+  DELETE https://petstore.swagger.io/v2/pet/<long> [404 Not Found, 436B, 263ms]
+
+□ pet / findByStatus
+└ Finds Pets by status
+  GET https://petstore.swagger.io/v2/pet/findByStatus?status=available&status=available [200 OK, 118.3kB, 1380ms]
+  √  Status code is 200
+  √  Response contains pets
+
+□ pet / findByTags
+└ Finds Pets by tags
+  GET https://petstore.swagger.io/v2/pet/findByTags?tags=<string>&tags=<string> [200 OK, 328B, 365ms]
+
+□ pet
+└ Add a new pet to the store
+  POST https://petstore.swagger.io/v2/pet [500 Server Error, 400B, 371ms]
+
+└ Update an existing pet
+  PUT https://petstore.swagger.io/v2/pet [500 Server Error, 400B, 427ms]
+
+□ store / inventory
+└ Returns pet inventories by status
+  GET https://petstore.swagger.io/v2/store/inventory [200 OK, 436B, 284ms]
+
+□ store / order / {orderId}
+└ Find purchase order by ID
+  GET https://petstore.swagger.io/v2/store/order/<long> [404 Not Found, 436B, 393ms]
+
+└ Delete purchase order by ID
+  DELETE https://petstore.swagger.io/v2/store/order/<long> [404 Not Found, 436B, 424ms]
+
+□ store / order
+└ Place an order for a pet
+  POST https://petstore.swagger.io/v2/store/order [500 Server Error, 400B, 407ms]
+
+□ user / createWithList
+└ Creates list of users with given input array
+  POST https://petstore.swagger.io/v2/user/createWithList [500 Server Error, 400B, 433ms]
+
+□ user / {username}
+└ Get user by user name
+  GET https://petstore.swagger.io/v2/user/<string> [404 Not Found, 385B, 369ms]
+
+└ Updated user
+  PUT https://petstore.swagger.io/v2/user/<string> [500 Server Error, 400B, 398ms]
+
+└ Delete user
+  DELETE https://petstore.swagger.io/v2/user/<string> [404 Not Found, 292B, 405ms]
+
+□ user / login
+└ Logs user into the system
+  GET https://petstore.swagger.io/v2/user/login?username=<string>&password=<string> [200 OK, 471B, 410ms]
+
+□ user / logout
+└ Logs out current logged in user session
+  GET https://petstore.swagger.io/v2/user/logout [200 OK, 370B, 393ms]
+
+□ user / createWithArray
+└ Creates list of users with given input array
+  POST https://petstore.swagger.io/v2/user/createWithArray [500 Server Error, 400B, 291ms]
+
+□ user
+└ Create user
+  POST https://petstore.swagger.io/v2/user [500 Server Error, 400B, 403ms]
+
+┌─────────────────────────┬─────────────────────┬─────────────────────┐
+│                         │            executed │              failed │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              iterations │                   1 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│                requests │                  20 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│            test-scripts │                   1 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│      prerequest-scripts │                   0 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              assertions │                   2 │                   0 │
+├─────────────────────────┴─────────────────────┴─────────────────────┤
+│ total run duration: 11.5s                                           │
+├─────────────────────────────────────────────────────────────────────┤
+│ total data received: 119.33kB (approx)                              │
+├─────────────────────────────────────────────────────────────────────┤
+│ average response time: 501ms [min: 263ms, max: 1818ms, s.d.: 375ms] │
+└─────────────────────────────────────────────────────────────────────┘
+Finished: SUCCESS
