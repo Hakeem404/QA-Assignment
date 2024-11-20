@@ -1,20 +1,27 @@
 jenkins:
   systemMessage: "Welcome to Jenkins!"
   numExecutors: 2
+
+  # SCM Git Configuration
   scm:
     git:
-      - url: 'https://github.com/Hakeem404/QA-Assignment'
+      url: 'https://github.com/Hakeem404/QA-Assignment'
+
+  # Security and Authentication
   securityRealm:
     local:
       users:
         - name: admin
-          password: '3503a33b8bc1474a806c02abd6724779
-'
+          password: '3503a33b8bc1474a806c02abd6724779'  # Close password with correct quotes
           roles:
             - admin
+
+  # Authorization Strategy
   authorizationStrategy:
     fullControlOnceLoggedIn:
       allowAnonymousRead: false
+
+  # Tool Configurations
   tools:
     jdk:
       - name: "JDK 11"
@@ -22,9 +29,13 @@ jenkins:
     git:
       - name: "Git 2.39"
         home: "/usr/bin/git"
+
+  # Plugin Installation
   plugins:
     - git: "4.10.0"
     - workflow-job: "2.40"
+
+  # Nodes Configuration
   nodes:
     - permanent:
         name: "my-agent"
@@ -33,4 +44,4 @@ jenkins:
         launcher:
           ssh:
             host: "my-agent-host"
-            credentialsId: "my-ssh-key"
+            credentialsId: "my-ssh-key"  # Make sure the credentialsId corresponds to an existing credential
