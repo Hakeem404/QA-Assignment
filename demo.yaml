@@ -1,0 +1,36 @@
+jenkins:
+  systemMessage: "Welcome to Jenkins!"
+  numExecutors: 2
+  scm:
+    git:
+      - url: 'https://github.com/Hakeem404/QA-Assignment'
+  securityRealm:
+    local:
+      users:
+        - name: admin
+          password: '3503a33b8bc1474a806c02abd6724779
+'
+          roles:
+            - admin
+  authorizationStrategy:
+    fullControlOnceLoggedIn:
+      allowAnonymousRead: false
+  tools:
+    jdk:
+      - name: "JDK 11"
+        home: "/usr/lib/jvm/java-11-openjdk"
+    git:
+      - name: "Git 2.39"
+        home: "/usr/bin/git"
+  plugins:
+    - git: "4.10.0"
+    - workflow-job: "2.40"
+  nodes:
+    - permanent:
+        name: "my-agent"
+        remoteFS: "/home/jenkins/agent"
+        labels: "linux"
+        launcher:
+          ssh:
+            host: "my-agent-host"
+            credentialsId: "my-ssh-key"
